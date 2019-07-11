@@ -1,75 +1,74 @@
 $(document).ready(function() {
-    getUniqueId();
+    getUniqueId('input.txt');
 });
 
-function getUniqueId() {
-    var words = ["mgdsdwqulhrinkatfjoyzxcbvq", "megsdwpulhrinkasfjdyzxcbvk", "megsdwpulhmibkatfjoyzccbvq", "megsdwtuohrinkatfjoyzecbvq", "megsdwpulhdinkatfyoyzxcbvb", "megszwpulhrirkatfjoyexcbvq", "eegsdwpulhzinkatfjoyzxdbvq", "megsdwpulhginkatfjoyqucbvq", "leqsdwpulhrinkatfeoyzxcbvq", "megsdwpblhrandatfjoyzxcbvq", "megrdwpudhrinvatfjoyzxcbvq", "mlgsdwpulhrinkatfuoyzxcbyq", "mensdwpunhrinsatfjoyzxcbvq", "megsdwpnlhrinqatfjoyzxcbuq", "megsdwpnlhrinkatfqoysxcbvq", "megsdwpulhrinkjtfjoywxobvq", "megsdwpclhbinkaffjoyzxcbvq", "mersdwpulhrinkattjoyzxcbdq", "megsddpwohrinkatfjoyzxcbvq", "mejsdwpulhrinratfjoyzxcbvl", "megsdwpujhrinkatfjkbzxcbvq", "megsdwpujhrinkatfjoyircbvq", "megsdwgulhrinkatojoyzxcbvm", "qegsdwpulhrinkatfjoyzxggvq", "megsdwpflhrinkatfjsazxcbvq", "megsdwpulhridkagfjoyzzcbvq", "mejsdwpulhriykatfjoyyxcbvq", "measdwpulhriakatfjoyzacbvq", "mebsdwpulhrinkatfjoyzxmyvq", "megsdwpflnrinkatfjoyzxcbxq", "megsdwpulhxinuatfjoytxcbvq", "megsdwsflhrinkatfjoyzxcmvq", "megsdwpuuhritkarfjoyzxcbvq", "megsdwpulhrinkazfjoyexcjvq", "megsdwpulhrifkatfjokzxcbvc", "megsdwmulvrinkatfjoyzxcblq", "meggdwpulhrfnkatfjoybxcbvq", "megsdwptlhrindatyjoyzxcbvq", "megsdwpulhrinkauqjoyzxibvq", "megsdwddlhrifkatfjoyzxcbvq", "megddwpulhrinkagfjoyzxcbva", "messdupulhrinkatfjoyzxqbvq", "megsdwpuahrinkatfjotzxchvq", "megsewpulhrankathjoyzxcbvq", "megsdwpulhrinkatfjoynqcbvv", "megsdwpulhrifkatfjotzxcbtq", "megsdjpulcrinkitfjoyzxcbvq", "fefsowpulhrinkatfjoyzxcbvq", "megsdwpulapinkatfjoyzvcbvq", "mejsdwpularinkatfjonzxcbvq", "megsxwpllrrinkatfjoyzxcbvq", "megsdlpulxvinkatfjoyzxcbvq", "megsdwpulhriekztfjoyzxxbvq", "megspwpulhrinuatfjoyzxcgvq", "megqdwpulhrinkatfjoyzujbvq", "megsdtpuehrinkatfjoyzxtbvq", "megsdwjulhrmnmatfjoyzxcbvq", "megjdwpulhrinkztfjoyzpcbvq", "megsdwpuljrinkawfjlyzxcbvq", "mewsdwpulhtinkatfjodzxcbvq", "megsdwpulhrinkatfcoizxcmvq", "meisdwpulhrinkatawoyzxcbvq", "megshwpulhrinkatfjoyzxcbtz", "megsdwpulhfinkatfjowzxcbvj", "megodwpulhrcskatfjoyzxcbvq", "megydxpulhrinkatfjofzxcbvq", "megsdwpulhrinkatljoytxdbvq", "mwgsdwpulyrinkatfjoyzxvbvq", "meesdwpulhrinkatfjcwzxcbvq", "cegsdwpwlhrinkatfioyzxcbvq", "megsdwpulhrinkatfqhyxxcbvq", "megsrrpulhrxnkatfjoyzxcbvq", "megsdgpulhrinkatfjoypxcbnq", "xegsdwpulhrinkaxkjoyzxcbvq", "mngsdwpulhrenkatfjofzxcbvq", "mecsdwpulhrinkabfjoozxcbvq", "pegsdkpulhrinkatfuoyzxcbvq", "megpdwpughrinkatfjoyzxzbvq", "mxgrdwpulhrinyatfjoyzxcbvq", "megsdwpulhpigkatfjoyzxcbfq", "mhgsdwpulhrinkagfjoxzxcbvq", "megsdwpblhtinkatfjqyzxcbvq", "megsawvulhrinkatfjoyzxcfvq", "metsuwpulhrinkatfjowzxcbvq", "mexsdwpulhrinkatsjoyzxvbvq", "megtdwpulhrinkatfjoizxcpvq", "megidwpjlhrinkatfdoyzxcbvq", "megsdwpuljrivkatfjoyqxcbvq", "mespdppulhrinkatfjoyzxcbvq", "megsdcpulhminkatftoyzxcbvq", "megsdwpulhriskatfjayzlcbvq", "mejsdwpulhrinkatfvoyzxibvq", "megfdwputhriykatfjoyzxcbvq", "megsdwparhrinkbtfjoyzxcbvq", "mtgsdwpulhmingatfjoyzxcbvq", "megsdwjulhrinkatfjtyzxtbvq", "megsvwpulhrinkatfjoyzecbvf", "megsdwpulprinkatyqoyzxcbvq", "zegsdwpulhwinkatfjoyzxcfvq", "megsdwiulhrinkatfjoyzxcjcq", "aegsdwpulirinkatfjoyvxcbvq", "mepsdwculbrinkatfjoyzxcbvq", "msgsdcpulhrinkctfjoyzxcbvq", "megsdwpulhrinkatfjoozxfevq", "megscwpulhrinkatmjoyzxcbsq", "megsdwpulhrinkltfjoyzxtmvq", "megsddpulhrixkatfjyyzxcbvq", "megsdwpulhrinkctfjoqzhcbvq", "megsbapblhrinkatfjoyzxcbvq", "megsdwpulhrinkatfjoyyxgpvq", "mwpsdwpulhrinkutfjoyzxcbvq", "megsdwpulhrinvnlfjoyzxcbvq", "megsdwsulorinkakfjoyzxcbvq", "mbgsdwpulhrinkktfjoyzxcbvg", "megddwpulhrindatfjoyzxcbvr", "memsdwpulhrinkatqjoyzxcbvo", "megsdwpulbrinkarfjoyzxcbxq", "megsdwpulhrilkatfjoynxcgvq", "mxgsdzpulhrinkatfjoydxcbvq", "megsawpulhrinkotfjoyzacbvq", "measdwpulhrinkctvjoyzxcbvq", "medsdwpulhtinkaqfjoyzxcbvq", "megsdwsulhrknkatfjoylxcbvq", "megadwpulhrinkatfjkyzxcbvh", "mygsdwpulhrinkatfboyzxcavq", "megsdwpulhrinkaufjxyzccbvq", "mtgsdwpulhrunkatfkoyzxcbvq", "megsdwpulhrinkamfwryzxcbvq", "meesdwpulhrgnkatnjoyzxcbvq", "megddwpolhrinkatfjoyixcbvq", "megsdwpulhrinsatfjoyzicwvq", "mmgsdwpulhrinkltfjoyzxcgvq", "meisdwpulhhinkatfjoyzxubvq", "megpdwpulhrinkatfroyzxcbkq", "megszwpuhhrinkatfjoyzxcbzq", "mersdwpulhrikcatfjoyzxcbvq", "mjgsdwpulhrinratfjoyzxcbvl", "megsdwnulkxinkatfjoyzxcbvq", "megsdwpulhrinkatlaoyzxpbvq", "megsdwpulhribkitfjjyzxcbvq", "megsdwpzlhrinkalfjoyzkcbvq", "megsdwpulhrinkutfjoyzxcdnq", "mfgpdwputhrinkatfjoyzxcbvq", "oegshwpclhrinkatfjoyzxcbvq", "megvdwxulhrinkatfjowzxcbvq", "mrgydwpulhrinkatfjoyzxcbvl", "megsdwpuqhrinkaxfjoyzxcbfq", "megsdwpughrinixtfjoyzxcbvq", "megsdwpslxrinkatfjoyzxcbvl", "megsdwpukhrinkatfjovzxnbvq", "megsdwpulnrinkrtojoyzxcbvq", "megsdwpuvhrinkatfjjyzxclvq", "vegrdwpulhrinzatfjoyzxcbvq", "melsdwwulvrinkatfjoyzxcbvq", "megsdwpulhrizkbtfjoyzjcbvq", "megsdwpulhrinlatfjoyzkcbvr", "megsdweulhrinkaofqoyzxcbvq", "megsdcpulhrifkatfdoyzxcbvq", "negsdwpulhainkztfjoyzxcbvq", "megsdwpklhrinkttfjoyzxvbvq", "megsdwpothrdnkatfjoyzxcbvq", "megsdwpulvrinkatfaoyzxcbvr", "mewsdwpulhrinkatfooyzxtbvq", "megtdwpulhrinkatfxoyzxcbvy", "zegsdwpulhrinkamljoyzxcbvq", "mkgodwpulhrcnkatfjoyzxcbvq", "megsdepularinkatfjoyzxybvq", "segsdwpulhrinkatfmoyzycbvq", "mbgsdwpulhrsnkztfjoyzxcbvq", "megsdwpmlhrinkatfjxyzhcbvq", "megsdwpulhrinkatfboyqxmbvq", "megsdwpulhrinkadtpoyzxcbvq", "megsdmpulhrjnkatfjoyzxwbvq", "megsdwpulhrivkatfroywxcbvq", "megsdwdulhrinkatpjwyzxcbvq", "megsdwpylhrdrkatfjoyzxcbvq", "megsdwpulhrvnkptfjoyzlcbvq", "megsdwpuihridkatfjuyzxcbvq", "megsdwpulhbiikatfjxyzxcbvq", "meggdwpulurinkatfjoyaxcbvq", "mehsnwpulcrinkatfjoyzxcbvq", "megsdwpulhrinkatfjoczdclvq", "megsdwjulhrinkatfhkyzxcbvq", "megsdwpulhrinoatfjoyzxcwvy", "megpdwpelhrfnkatfjoyzxcbvq", "megsjwpulhrwnkatfjdyzxcbvq", "megsdwpulhrbniatfjoyzxcbpq", "megsdwpulhrwnkatfjoydxcpvq", "megsdwrulhrinkatfjvyixcbvq", "yegvdwpulhtinkatfjoyzxcbvq", "meosdwpulhrinkatfjhyzxsbvq", "mjgsdwpulhrinkatfjoyyxcjvq", "megsdwpulhrinkatfnoyzlmbvq", "mehsdfkulhrinkatfjoyzxcbvq", "megsdwpuahrinkatfyoyzxcwvq", "megsdwpulhyinkatfjobzkcbvq", "megsdwpjlhrinkatfnoyzscbvq", "megsdwiulhrinqatfjoyzxcavq", "megsdwpulurinkatfjoykxcbmq", "megsdwpmlhvinkatfjotzxcbvq", "megswwpulhrinfatfjoytxcbvq", "mxgsdwpulhrrnkatfjoyhxcbvq", "megubwpulhrinkaafjoyzxcbvq", "megsdwpulhrdnsztfjoyzxcbvq", "megsdwpulhronkgtfjhyzxcbvq", "megsdwzulhfinratfjoyzxcbvq", "megsdwpulhrinkrtfjqyixcbvq", "megspwpulhrinkatfjoywxcavq", "megmfjpulhrinkatfjoyzxcbvq", "lelsdwpulhrinsatfjoyzxcbvq", "megsdwnultrinkatfjoyzxybvq", "megsdwpulhdnnkatfjpyzxcbvq", "megsdwpulhzinkatfjoyzhcpvq", "megoddpulhrilkatfjoyzxcbvq", "megsdvpulhrwnkatfjoyzxcbdq", "megsdwpulhmikkatfjoyzxcbvr", "meesdwpulhrinkaofjoazxcbvq", "megndwhulhrinfatfjoyzxcbvq", "megsdwpulhjihkatfjoyzxcbvb", "jegsdwpulhrinkattjoszxcbvq", "megsdwpulhrenkatfjodzxcbvp", "mefsdwpulhrinkatfjoyzxcczq", "megsdwpulhrknkatfjovzxcbvb", "megytwpulhrinkatfjoyzxcbvo", "csgsdwpulhrinkatdjoyzxcbvq", "megsbwpulhrinkazfjtyzxcbvq", "mrgsdwpulhjinkatfjoyzxcbvm", "megsywzulhrinkatfjofzxcbvq", "megxdwpulhrndkatfjoyzxcbvq", "mcgsdwpuphrixkatfjoyzxcbvq", "megsdlpulxvinkatfvoyzxcbvq", "megsdwpulhrinfatfjoyzicbvo", "megwgwpulhrinpatfjoyzxcbvq", "mggsdwpulhrinkatfjtrzxcbvq", "msgsdwpulirinkatfjoyzxcbaq", "megsdwpulhrineatfeoyzxcbvl", "megsdnpulhrinkatojoyzxcbvb", "mfgsdwpulhdinkatmjoyzxcbvq", "megsdwpulhrinkawfjuyzxcbvg", "megsdwpulhrincatfjoyzxcxvu", "mevsdwzplhrinkatfjoyzxcbvq", "megskweulhfinkatfjoyzxcbvq", "mebsdvpulhrinkatfjoyzxcbkq", "megddwiulhrinkatfioyzxcbvq", "mygsdwpulhqinkatfooyzxcbvq", "megsdweulhrfnkatfjoybxcbvq", "mrgsdhpulmrinkatfjoyzxcbvq", "megsdwkukhrinkatftoyzxcbvq", "megsqwpulhrinfatfjoyzxebvq", "megsdwpulhriskanfjoyzxctvq"];
+function getUniqueId(filePath) {
 
-    var tabLength = words.length;
-    var result = null;
-    var word = null;
-    var wordToTest = null;
-    var charToTest = null;
-    var charToTest2 = null;
-    var countForWord = 0;
-    var charToRemove = null;
+    $.get(filePath, function(data) {
+        var words = data.split("\n");
 
-    for (var i = 0; i < tabLength; i++) {
-        word = words[i];
+        var tabLength = words.length;
+        var result = null;
+        var word = null;
+        var wordToTest = null;
+        var charToTest = null;
+        var charToTest2 = null;
+        var countForWord = 0;
+        var charToRemove = null;
 
-        console.log("word n° " + i + " : " + word);
-        console.log("	" + tabLength - i - 1 + " words to confront");
+        for (var i = 0; i < tabLength; i++) {
+            word = words[i];
 
-        for (var j = i + 1; j < tabLength - 1; j++) {
+            console.log("word n° " + i + " : " + word);
 
-            console.log("j : " + j);
-            console.log("tabLength - 1 : " + (tabLength - 1));
+            for (var j = i + 1; j < tabLength - 1; j++) {
 
-            wordToTest = words[j];
-            console.log("		confronting word n° " + j + " : " + wordToTest);
+                wordToTest = words[j];
+                console.log("		confronting word n° " + j + " : " + wordToTest);
 
-            for (var k = 0; k < word.length; k++) {
+                for (var k = 0; k < word.length; k++) {
 
-                charToTest = word[k];
-                console.log("			char n° " + k + " : " + charToTest);
-                charToTest2 = wordToTest[k];
-                console.log("			confronting char n° " + k + " : " + charToTest2);
+                    charToTest = word[k];
+                    console.log("			char n° " + k + " : " + charToTest);
+                    charToTest2 = wordToTest[k];
+                    console.log("			confronting char n° " + k + " : " + charToTest2);
 
-                if (charToTest !== charToTest2) {
-
-                    console.log("				chars are different!");
-
-                    if (countForWord > 0) {
-                        console.log("				more than one pair for word -> pass this confronting word");
-                        break;
-                    } else {
+                    if (charToTest !== charToTest2) {
                         countForWord++;
-                        console.log("				different chars for current word = " + countForWord);
-                        charToRemove = charToTest;
-                        console.log("				char to remove for word = " + charToRemove);
+
+                        console.log("				-> chars are different");
+
+                        if (countForWord > 1) {
+                            console.log("				more than one pair for word -> pass this confronting word");
+                            break;
+                        } else {
+                            charToRemove = charToTest;
+                            console.log("				char to remove from word = " + charToRemove);
+                        }
                     }
                 }
+
+                if (countForWord === 1) {
+                    console.log("	correct boxes found!");
+                    result = word.replace(charToRemove, '');
+                    break;
+                }
+
+                countForWord = 0;
+                charToRemove = null;
             }
 
-            if (countForWord === 1) {
-                console.log("	correct boxes found!");
-                result = word.replace(charToRemove, '');
+            if (result) {
                 break;
             }
-
-            countForWord = 0;
-            charToRemove = null;
         }
 
-        if (result) {
-            break;
-        }
-    }
+        console.log("result : " + result);
 
-    console.log("result : " + result);
+        var resultDiv = $('#result');
+        resultDiv.append('<p>' + result + '</p>');
 
-    var resultDiv = $('#result');
-    resultDiv.append('<p>' + result + '</p>');
+        return result;
 
-    return result;
+    });
 }
