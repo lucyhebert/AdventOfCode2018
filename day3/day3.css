@@ -1,0 +1,19 @@
+#result #overlapping-result {
+    font-size: 20px;
+}
+
+#result #table-result {
+    font-size: 2px;
+}
+
+#result #table-result td {
+    padding: 0;
+}
+
+#result #table-result td.blue {
+    color: blue;
+}
+
+#result #table-result td.red {
+    color: red;
+}
