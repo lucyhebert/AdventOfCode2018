@@ -9,8 +9,11 @@ function solveDay4(filePath) {
 
         var guardsInfoList = getRecordsAsObjectsList(data);
         var guardWithMostMinutesAsleep = findGuardWithMostMinutesAsleep(guardsInfoList);
-        console.log(guardWithMostMinutesAsleep.id);
-        // generateHtmlView(matrix, overlappingInches, intactClaim);
+        var minuteGuardWasMostAsleep = findMinuteGuardWasMostAsleep(guardWithMostMinutesAsleep);
+
+        var strategy1result = guardWithMostMinutesAsleep.id * minuteGuardWasMostAsleep;
+
+        generateHtmlView(strategy1result);
     });
 }
 
@@ -22,7 +25,7 @@ function findGuardById(guardsList, id) {
 }
 
 
-function findDateInGuardInfo(stats, date) {
+function findStatByDate(stats, date) {
     if(!stats) {
         return false
     }
@@ -32,6 +35,7 @@ function findDateInGuardInfo(stats, date) {
         });
     }
 }
+
 
 function getRecordsAsObjectsList(data) {
 
@@ -56,9 +60,6 @@ function getRecordsAsObjectsList(data) {
 
         /*------------------------------------------------------*/
 
-        var stat;
-
-
         if(guardId()) {
             if (!findGuardById(guardsInfoList, guardId())) {
                 guardInfo = {
@@ -75,17 +76,16 @@ function getRecordsAsObjectsList(data) {
             }
         }
 
+        var stat;
+
         if(time[0] === "00") {
-            if(!findDateInGuardInfo(guardInfo.sleepingStats, date)) {
+            if(!findStatByDate(guardInfo.sleepingStats, date) && fallsAsleep) {
                 stat = {
                     date: date,
                     ranges: []
                 };
 
                 guardInfo.sleepingStats.push(stat);
-            }
-            else {
-                stat = findDateInGuardInfo(guardInfo.sleepingStats, date);
             }
 
             var rangeInfo;
@@ -98,23 +98,21 @@ function getRecordsAsObjectsList(data) {
                 stat.ranges.push(rangeInfo);
             }
             else if(wakesUp){
+
+                stat = findStatByDate(guardInfo.sleepingStats, date);
+
                 rangeInfo = stat.ranges[stat.ranges.length - 1];
                 rangeInfo.end = parseInt(time[1]) - 1;
-                guardInfo.totalTimeAsleep += rangeInfo.end - rangeInfo.start;
+                guardInfo.totalTimeAsleep += rangeInfo.end - rangeInfo.start + 1;
             }
         }
     }
 
-    console.log(guardsInfoList);
     return guardsInfoList;
 }
 
 
 function findGuardWithMostMinutesAsleep(guardsList) {
-
-    console.log(guardsList.map(function(guard) {
-        return guard.totalTimeAsleep;
-    }));
 
     var max = Math.max.apply(null,guardsList.map(function(guard) {
         return guard.totalTimeAsleep;
@@ -123,4 +121,29 @@ function findGuardWithMostMinutesAsleep(guardsList) {
     return guardsList.find(function(guard) {
         return guard.totalTimeAsleep === max;
     });
+}
+
+
+function findMinuteGuardWasMostAsleep(guard) {
+
+    var minutes = Array(60).fill(0);
+
+    $(guard.sleepingStats).each(function(index, stat) {
+
+        $(stat.ranges).each(function(index, rangeInfo) {
+            for(var i = rangeInfo.start; i <= rangeInfo.end; i++) {
+                minutes[i]++;
+            }
+        });
+    });
+
+    return minutes.indexOf(Math.max.apply(null,minutes));
+}
+
+
+function generateHtmlView(strategy1result) {
+
+    var resultDiv = $('#result');
+
+    resultDiv.find($('#strategy-1-result')).append(strategy1result);
 }
