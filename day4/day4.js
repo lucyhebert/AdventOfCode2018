@@ -8,12 +8,15 @@ function solveDay4(filePath) {
     $.get(filePath, function(data) {
 
         var guardsInfoList = getRecordsAsObjectsList(data);
+
         var guardWithMostMinutesAsleep = findGuardWithMostMinutesAsleep(guardsInfoList);
-        var minuteGuardWasMostAsleep = findMinuteGuardWasMostAsleep(guardWithMostMinutesAsleep);
+        var minuteGuardWasMostAsleep = findMinuteGuardWasMostAsleep(guardWithMostMinutesAsleep).minute;
+        var guardWithMaxMinuteMostAsleep = findGuardWithMaxMinuteMostAsleep(guardsInfoList);
 
         var strategy1result = guardWithMostMinutesAsleep.id * minuteGuardWasMostAsleep;
+        var strategy2result = guardWithMaxMinuteMostAsleep.id * guardWithMaxMinuteMostAsleep.minuteMostAsleep.minute;
 
-        generateHtmlView(strategy1result);
+        generateHtmlView(strategy1result, strategy2result);
     });
 }
 
@@ -137,13 +140,41 @@ function findMinuteGuardWasMostAsleep(guard) {
         });
     });
 
-    return minutes.indexOf(Math.max.apply(null,minutes));
+    var max = Math.max.apply(null, minutes)
+
+    return {
+        minute: minutes.indexOf(max),
+        nbTimes: max
+    };
 }
 
 
-function generateHtmlView(strategy1result) {
+function setMinuteGuardWasMostAsleepForEachGuard(guardsList) {
+
+    $(guardsList).each(function(index, guard) {
+       guard.minuteMostAsleep =  findMinuteGuardWasMostAsleep(guard);
+    });
+}
+
+
+function findGuardWithMaxMinuteMostAsleep(guardsList) {
+
+    setMinuteGuardWasMostAsleepForEachGuard(guardsList);
+
+    var max = Math.max.apply(null,guardsList.map(function(guard) {
+        return guard.minuteMostAsleep.nbTimes;
+    }));
+
+    return guardsList.find(function(guard) {
+        return guard.minuteMostAsleep.nbTimes === max;
+    });
+}
+
+
+function generateHtmlView(strategy1result, strategy2result) {
 
     var resultDiv = $('#result');
 
     resultDiv.find($('#strategy-1-result')).append(strategy1result);
+    resultDiv.find($('#strategy-2-result')).append(strategy2result);
 }
