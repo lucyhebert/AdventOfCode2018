@@ -7,9 +7,13 @@ function solveDay5(filePath) {
 
     $.get(filePath, function(data) {
 
-        var finalPolymerSize = scanPolymer(data.split(""));
+        var polymer = data.split("")
 
-        generateHtmlView(finalPolymerSize);
+        var finalPolymerSize = scanPolymer(polymer);
+
+        var minPolymerSize = findMinPolymerLength(polymer);
+
+        generateHtmlView(finalPolymerSize, minPolymerSize);
 
     });
 }
@@ -45,20 +49,59 @@ function areUnitsReacting(unitA, unitB) {
     if(unitA === unitB) {
         return result
     }
-    else {
-        if((unitA === unitA.toUpperCase() && unitA === unitB.toUpperCase()) || (unitA === unitA.toLowerCase() && unitA === unitB.toLowerCase())) {
-            console.log("found pair : " + unitA + unitB);
-            result = true;
-        }
+    else if((unitA === unitA.toUpperCase() && unitA === unitB.toUpperCase()) || (unitA === unitA.toLowerCase() && unitA === unitB.toLowerCase())) {
+        result = true;
     }
 
     return result
 }
 
 
-function generateHtmlView(finalPolymerSize) {
+function findMinPolymerLength(polymer) {
+
+    var charArray = findProblematicType(polymer);
+
+    return Math.min.apply(null, charArray.map(function(char) {
+        return char.polymerLength;
+    }));
+}
+
+
+function findProblematicType(polymer) {
+
+    var alphabet = [], i = 'a'.charCodeAt(0), j = 'z'.charCodeAt(0);
+    for (; i <= j; ++i) {
+        alphabet.push(String.fromCharCode(i));
+    }
+
+    var newPolymer;
+    var newPolymerLength;
+    var charArray = [];
+
+    $(alphabet).each(function(index, char) {
+        newPolymer = removeType(polymer, char);
+        newPolymerLength = scanPolymer(newPolymer);
+        charArray.push({
+            char: char,
+            polymerLength: newPolymerLength
+        });
+    });
+
+    return charArray;
+}
+
+
+function removeType(polymer, type) {
+    return polymer.filter(function(index) {
+        return index !== type && index !== type.toUpperCase();
+    });
+}
+
+
+function generateHtmlView(finalPolymerSize, minPolymerSize) {
 
     var resultDiv = $('#result');
 
-    resultDiv.find($('.text-result')).append(finalPolymerSize);
+    resultDiv.find($('#final-polymer-size')).append(finalPolymerSize);
+    resultDiv.find($('#min-polymer-size')).append(minPolymerSize);
 }
